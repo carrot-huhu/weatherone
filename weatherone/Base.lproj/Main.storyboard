@@ -41,7 +41,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="TSg-ga-7ce" kind="presentation" id="dnE-fV-ufb"/>
+                                    <segue destination="TSg-ga-7ce" kind="presentation" identifier="QueryViewControllerSegue" id="dnE-fV-ufb"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-f0-sHd">
@@ -150,7 +150,7 @@
         <!--Query View Controller-->
         <scene sceneID="7I4-cU-Uqt">
             <objects>
-                <viewController id="TSg-ga-7ce" customClass="QueryViewController" sceneMemberID="viewController">
+                <viewController id="TSg-ga-7ce" customClass="QueryViewController" customModule="weatherone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ucz-HA-g0d">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +162,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="39"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="back:" destination="TSg-ga-7ce" eventType="touchUpInside" id="k6N-ak-Pun"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前城市:xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhi-mB-mRg">
                                 <rect key="frame" x="101" y="101" width="191" height="42"/>
@@ -181,6 +184,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="查询天气">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="query:" destination="TSg-ga-7ce" eventType="touchUpInside" id="2jO-Q2-C8z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Itm-Hk-A8k"/>
@@ -196,6 +202,10 @@
                             <constraint firstItem="Zhi-mB-mRg" firstAttribute="top" secondItem="Ucz-HA-g0d" secondAttribute="topMargin" constant="101" id="qn8-SV-TSN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="citytextfield" destination="TfN-vd-1Wc" id="HEw-NY-bAI"/>
+                        <outlet property="currentcitylabel" destination="Zhi-mB-mRg" id="RF8-rf-Unq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cc-21-CSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +220,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -219,7 +229,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

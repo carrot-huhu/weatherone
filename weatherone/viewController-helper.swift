@@ -17,6 +17,13 @@ extension ViewController{
         weather.windDir = weatherJSON["now"]["windDir"].stringValue
         weather.windScale = weatherJSON["now"]["windScale"].stringValue
         
+        if let visint = Int(weather.vis){
+            if visint <= 8{
+                self.setGrayGradientBackground()
+            }
+        }
+        
+        
         iconimagefield.image = UIImage(named: self.weather.icon)
         icontextlabel.text = self.weather.text
         templabel.text = self.weather.temp

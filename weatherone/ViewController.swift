@@ -11,7 +11,9 @@ import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+   
+    
 
     @IBOutlet weak var backgroundview: UIView!
     
@@ -80,6 +82,17 @@ class ViewController: UIViewController {
         print(dateFormatter3.string(from: date))
         print(date)
         
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        
+        if (hour >= 6 && hour < 18) {
+            setPinkGradientBackground()
+            print(hour)
+        }else{
+            setBlueGradientBackground()
+            print(hour)
+        }
+        
         locationmanage.requestWhenInUseAuthorization()//请求授权获取当前位置
         activityIndicator.startAnimating() // 开始加载动画
         print("开始加载动画")
@@ -92,9 +105,18 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        setPinkGradientBackground()
-        print("默认加载背景")
+//    override func viewWillAppear(_ animated: Bool) {
+//        setPinkGradientBackground()
+//        print("默认加载背景")
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "QueryViewControllerSegue"{
+             let vc = segue.destination as! QueryViewController
+             vc.currentcity = weather.city
+             vc.delegate = self
+            //将目标控制器的delagate设置成当前控制器
+            }
     }
     
     // 设置背景为蓝粉色渐变

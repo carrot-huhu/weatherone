@@ -31,6 +31,7 @@ class QueryViewController: UIViewController {
             delegate?.didchangecity(city:citytextfield.text!)
             print("执行了didchangecity")
             print(citytextfield.text!)
+            
         }
     }
     override func viewDidLoad() {

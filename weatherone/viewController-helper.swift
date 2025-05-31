@@ -20,9 +20,11 @@ extension ViewController{
         if let visint = Int(weather.vis){
             if visint <= 8{
                 self.setGrayGradientBackground()
+            }else{
+                self.setBlueGradientBackground()
             }
         }
-        
+        //根据天气能见度设置背景
         
         iconimagefield.image = UIImage(named: self.weather.icon)
         icontextlabel.text = self.weather.text
@@ -31,7 +33,8 @@ extension ViewController{
         vislabel.text = "能见度:\(self.weather.vis)km"
         windDirlabel.text = "风向:\(self.weather.windDir)"
         windScalelabel.text = "风力等级:\(self.weather.windScale)级"
-        
+        print(weatherJSON["now"]["temp"].stringValue)
+        print(weatherJSON["now"]["icon"].stringValue)
         
     }
     func showCity(_ cityJSON:JSON){

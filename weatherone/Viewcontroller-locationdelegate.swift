@@ -21,6 +21,9 @@ extension ViewController:CLLocationManagerDelegate{
         //异步执行,开辟一条新路
         AF.request(kQweatherNowpath,parameters: getParameters("\(lon),\(lat)")).responseJSON { response in
             if let data = response.value{
+                self.activityIndicator.stopAnimating()
+                //结束加载动画
+                
                 let weatherJSON = JSON(data)//源于依赖包的方法,然后可以[]取值
                 self.showWeather(weatherJSON)
                 print("showweather")

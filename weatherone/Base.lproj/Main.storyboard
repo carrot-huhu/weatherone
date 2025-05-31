@@ -134,6 +134,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundview" destination="yRe-6V-49c" id="9G0-hc-R4h"/>
                         <outlet property="citylabel" destination="4Dk-Jj-511" id="dsm-4y-Au1"/>
                         <outlet property="datelabel" destination="HdN-Ia-CYb" id="1bB-8r-lWk"/>
                         <outlet property="humiditylabel" destination="2gZ-ZJ-kVE" id="tPA-eU-IKi"/>
@@ -213,7 +214,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,7 +223,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
